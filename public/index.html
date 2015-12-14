@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+
+    <!-- Ensure that everything scales appropriately on a mobile device -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <!-- stylesheet stuff -->
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+</head>
+
+<body>
+  <div class="header">
+    <h1> Balderdash </h1>
+  </div>
+
+  <div class="content">
+
+    <div id="gameArea">
+        <!-- This is where the templates will be used -->
+    </div>
+
+    <!-- Main Title Screen that appears when the page loads for the first time -->
+    <div id="intro-screen-template" style="display: none">
+
+        <div class="titleWrapper">
+
+            <form id="playerForm">
+                <label for="inputPlayerName">Your Name:</label>
+                <input id="inputPlayerName" type="text" required/>
+                <input type="submit" value="Join Game" class="btn">
+            </form>
+
+            <p> -- or -- </p>
+
+            <button id="createCards" class="btn"> Create New Cards </button>
+
+        </div>
+    </div>
+
+    <!-- Waiting screen template for when waiting for other players -->
+    <div id="waiting-screen-template"  style="display: none">
+      <div id="waitingMessage">
+        <p> There are currently <span id="numPlayers">no</span> players.</p>
+        <p id="welcome"></p>  
+      </div>
+      <div id="roundWaitMessage">
+        <p>Please wait while the other players submit their answers </p>
+      </div>
+      <br>
+    </div>
+
+
+    <!-- This is the round screen where players submit guesses -->
+    <div id="round-template" style="display: none">
+        <div id="promptArea">
+            <p> Guess the definition of the following word! (or what you think others will find funny...) </p>
+            <h2 id="promptWord"></h2>
+        </div>
+        <form id="guessForm">
+                <label for="inputGuess">Guess:</label>
+                <textarea id="inputGuess" type="text" required></textarea>
+                <input type="submit" value="Submit" class="btn">
+        </form>
+    </div>
+
+    <!-- this is the vote screen for voting -->
+    <div id="vote-template" style="display: none">
+        <div id="promptArea">
+            <h2 id="promptWord2"></h2>
+        </div>
+        <form id="voteForm">
+                <label for="inputGuess">Vote for your favorite:</label> <br>
+                <input type="radio" name="guess" value="1"><div id= "player1Guess"></div><br>
+                <input type="radio" name="guess" value="2"><div id= "player2Guess"></div><br>
+                <input type="radio" name="guess" value="3"><div id= "player3Guess"></div><br>
+                <input type="radio" name="guess" value="4"><div id= "player4Guess"></div><br>
+                <input type="submit" value="Submit" class="btn">
+        </form>
+    </div>
+
+    <!-- Game Over temaplate that displays winner -->
+    <div id="game-over-template" style="display: none">
+        <h2 id="winnerMessage"></h2>
+        <button id="homeButton" class="btn"> Homepage </button>
+    </div>
+
+    <!-- the scores template that is almost always displayed -->
+    <div id="scores-template" style="display: none">
+        <h2> Scores </h2>
+        <p id = "scores"> </p>
+    </div>
+
+    <!-- template for add ing a new word -->
+    <div id="new-word-template" style="display:none">
+      <form id="wordForm">
+        <label for="inputWord">New Word:</label>
+        <input id="inputWord" type="text" /> <br><br>
+        <label for="inputDefinition">Definition:</label>
+        <textarea id="inputDefinition"></textarea>
+        <input type="submit" value="Add" class="btn">
+      </form>
+      <button id="back" class="btn"> Back </button>
+      <h2> Current Words: </h2>
+      <div id ="wordList"></div>
+
+    </div>
+
+    <!-- JavaScript Stuff-->
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./javascript/clientSide.js"></script>
+    <script src="./javascript/webSockets.js"></script>
+  </div>
+
+</body>
+</html>
+

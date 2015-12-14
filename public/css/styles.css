@@ -1,0 +1,46 @@
+/*
+
+ Dark Blue : #1C0847
+ Dark Purple : #280022
+ Medium Blue: #00A9FF
+ Light Grey : #C9C9C9
+ Light Cream : #FFFFF6
+
+*/
+
+html, body {
+    background-color: #C9C9C9;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    color: #1C1C1C;
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
+    margin-left: 0px;
+    margin-top: 1%;
+}
+.header{
+	background-color: #1C0847;
+	color:#F2F2F2;
+	padding: 10px;
+	padding-left: 5%;
+	margin-bottom: 2%;
+	margin-left: 0px;
+}
+
+.content{
+	padding-left: 5%;
+}
+
+input{
+	background-color:#FFFFFF;
+	color:#1C1C1C;
+}
+
+.btn{
+	background-color:#1C1C1C;
+	color:#F2F2F2;
+	border-style:none;
+	padding: 10px;
+}
+
+
